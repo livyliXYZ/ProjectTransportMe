@@ -11,11 +11,7 @@ if(isset($_POST['regsubmit'])){
   $firstname = $_POST['firstName'];
   $lastname = $_POST['lastName'];
 
-//echo $email;
-//echo $password;
-//echo $firstname;
-//echo $lastname;
-  if(!preg_match('/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/', $username)){
+if(!preg_match('/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/', $username)){
     echo "invalid email address";
 	exit('Invalid Email<a href="javascript:history.back(-1);">back</a>');
     }
