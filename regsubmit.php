@@ -29,6 +29,34 @@ if(!preg_match('/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/', $username)){
     exit;
     }
 
+  //User image upload process
+//  if($_FILES['userimage']['error'] > 0){
+//     die('An error ocurred when uploading!!');
+//  }
+//
+//  if(!getimagesize($_FILES['userimage']['tmp_name'])){
+//     die('Please ensure you are uploading an image');
+//  }
+//
+//  //check filetype
+//  if($_FILES['userimage']['type'] != 'image/png'){
+//     die('Unsupported filetype');
+//  }
+//
+//  //check filesize
+//  if($_FILES['userimage']['size'] > 500000){
+//     die('File uploaded exceeds maximum upload size');
+//  }
+//  //check if the file exits
+//  if($file_exists('upload/' . $_FILES['userimage']['name'])){
+//     die('File with that name already exists');
+//  }
+//
+//  // Upload file
+//  if(!move_uploaded_file($_FILES['userimage']['tmp_name'], 'upload/' . $_FILES['userimage'][$username])){
+//    die('Error uploading file - check destination is writeable.');
+//  }
+
   $insert_sql = "INSERT INTO users(email, password, firstName, lastName)VALUES('$username','$password','$firstname','$lastname')";
 
   if(mysql_query($insert_sql, $conn)){
